@@ -1,9 +1,9 @@
 package com.rc
 
+import com.rc.core.infrastructure.InFileDatabase
 import com.rc.http.HttpServer
-import com.rc.core.infrastructure.InMemoryDatabase
 
 fun main() {
-   val database = InMemoryDatabase()
+   val database = InFileDatabase("src/main/resources/database.txt")
    HttpServer(database).start()
 }
